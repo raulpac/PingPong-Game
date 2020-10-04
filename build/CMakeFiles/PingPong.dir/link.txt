@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/PingPong.dir/src/main.cpp.o CMakeFiles/PingPong.dir/src/gameLoop.cpp.o CMakeFiles/PingPong.dir/src/input.cpp.o CMakeFiles/PingPong.dir/src/renderer.cpp.o CMakeFiles/PingPong.dir/src/player.cpp.o  -o PingPong  -lSDL2 

@@ -40,7 +40,7 @@ void Player::UpdateBodyBar(SDL_Point &current_head_cell, SDL_Point &prev_head_ce
   // Add previous head location to vector
   bodyBar.push_back(prev_head_cell);
   // Remove the tail from the vector.
-  bodyBar.erase(body.begin());
+  bodyBar.erase(bodyBar.begin());
 
 }
 
@@ -50,7 +50,7 @@ bool Player::PlayerCell(int x, int y) {
   if (x == static_cast<int>(head_x) && y == static_cast<int>(head_y)) {
     return true;
   }
-  for (auto const &item : body) {
+  for (auto const &item : bodyBar) {
     if (x == item.x && y == item.y) {
       return true;
     }

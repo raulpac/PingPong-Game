@@ -3,17 +3,17 @@
 #include "SDL.h"
 
 //I need to add my player class
-//#include "snake.h"
+#include "player.h"
 
 
 // If direction is different change direction
 
-void Input::ChangeDirection(Snake &snake, Snake::Direction button ) const {
-  if (snake.direction != button) snake.direction = button;
+void Input::ChangeDirection(Player &player, Player::Direction button ) const {
+  if (player.direction != button) player.direction = button;
   return;
 }
 
-void Controller::HandleInput(bool &running, Snake &snake) const {
+void Input::HandleInput(bool &running, Player &player) const {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {
@@ -21,11 +21,11 @@ void Controller::HandleInput(bool &running, Snake &snake) const {
     } else if (e.type == SDL_KEYDOWN) {
       switch (e.key.keysym.sym) {
         case SDLK_UP:
-          ChangeDirection(snake, Snake::Direction::kUp);
+          ChangeDirection(player, Player::Direction::kUp);
           break;
 
         case SDLK_DOWN:
-          ChangeDirection(snake, Snake::Direction::kDown);
+          ChangeDirection(player, Player::Direction::kDown);
           break;
 
       }

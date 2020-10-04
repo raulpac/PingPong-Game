@@ -1,9 +1,19 @@
 cmake_minimum_required(VERSION 3.7)
 
-project(HelloWorld)
+add_definitions(-std=c++17)
+set(CXX_FLAGS "-Wall")
+set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
+
+project(PingPong)
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+
 find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+include_directories(${SDL2_INCLUDE_DIRS} src)
 
 
-add_executable(HelloWorld src/main.cpp)
-target_link_libraries(HelloWorld ${SDL2_LIBRARIES})
+add_executable(PingPong src/main.cpp src/gameLoop.cpp src/input.cpp src/renderer.cpp src/player.cpp)
+string(STRIP ${SDL2_LIBRARIES} SDL2_LIBRARIES)
+target_link_libraries(PingPong ${SDL2_LIBRARIES})
+
+
