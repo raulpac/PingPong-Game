@@ -72,8 +72,8 @@ void Game::Update() {
 
   player.Update();
 
-  int new_x = static_cast<int>(player.head_x);
-  int new_y = static_cast<int>(player.head_y);
+//  int new_x = static_cast<int>(player.head_x);
+//  int new_y = static_cast<int>(player.head_y);
 
  /*
   // Check if there's food over here

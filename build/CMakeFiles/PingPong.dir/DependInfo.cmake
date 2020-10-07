@@ -4,17 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/raulpac/Desktop/C++/Capstone/PINGPONG/src/gameLoop.cpp" "/home/raulpac/Desktop/C++/Capstone/PINGPONG/build/CMakeFiles/PingPong.dir/src/gameLoop.cpp.o"
-  "/home/raulpac/Desktop/C++/Capstone/PINGPONG/src/input.cpp" "/home/raulpac/Desktop/C++/Capstone/PINGPONG/build/CMakeFiles/PingPong.dir/src/input.cpp.o"
-  "/home/raulpac/Desktop/C++/Capstone/PINGPONG/src/main.cpp" "/home/raulpac/Desktop/C++/Capstone/PINGPONG/build/CMakeFiles/PingPong.dir/src/main.cpp.o"
-  "/home/raulpac/Desktop/C++/Capstone/PINGPONG/src/player.cpp" "/home/raulpac/Desktop/C++/Capstone/PINGPONG/build/CMakeFiles/PingPong.dir/src/player.cpp.o"
-  "/home/raulpac/Desktop/C++/Capstone/PINGPONG/src/renderer.cpp" "/home/raulpac/Desktop/C++/Capstone/PINGPONG/build/CMakeFiles/PingPong.dir/src/renderer.cpp.o"
+  "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/gameLoop.cpp.o"
+  "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/input.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/input.cpp.o"
+  "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/main.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/main.cpp.o"
+  "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/player.cpp.o"
+  "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/renderer.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/renderer.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/include/SDL2"
+  "/usr/local/Cellar/sdl2/2.0.12_1/include/SDL2"
   "../src"
   )
 

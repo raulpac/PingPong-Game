@@ -63,7 +63,7 @@ void Renderer::Render(Player const player) {
     SDL_RenderFillRect(sdl_renderer, &block);
   }
 
-  // Render snake's head
+  /* Render snake's head
   block.x = static_cast<int>(player.head_x) * block.w;
   block.y = static_cast<int>(player.head_y) * block.h;
   if (player.alive) {
@@ -72,7 +72,8 @@ void Renderer::Render(Player const player) {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
   SDL_RenderFillRect(sdl_renderer, &block);
-
+  */
+ 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }

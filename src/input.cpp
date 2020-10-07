@@ -9,7 +9,10 @@
 // If direction is different change direction
 
 void Input::ChangeDirection(Player &player, Player::Direction button ) const {
-  if (player.direction != button) player.direction = button;
+  if (player.direction != button) {
+    player.direction = button;
+   
+  }
   return;
 }
 
