@@ -1,6 +1,10 @@
 #include "ball.h"
 #include "SDL.h"
 
+Ball::Y_Direction Ball::get_y_direction(){
+    return y_direction;
+} 
+
 void Ball::PlaceBall(){
 
     //Initial Position for ball is the center.
@@ -22,6 +26,10 @@ void Ball::UpdatePosition(){
                 //y_direction == Y_Direction::kUp; 
                 x_direction = X_Direction::krigth;
             }
+            if(collision_computer == true){ 
+                //y_direction == Y_Direction::kUp; 
+                x_direction = X_Direction::kleft;
+            }
             
             if(position.y >= 64){
                 y_direction = Y_Direction::kUp;
@@ -42,6 +50,9 @@ void Ball::UpdatePosition(){
             if(collision_player1 == true){    
                 x_direction = X_Direction::krigth;
             }
+            if(collision_computer == true){ 
+                x_direction = X_Direction::kleft;
+            }
 
             if(position.y <= 0){
                 y_direction = Y_Direction::kDown;
@@ -61,12 +72,22 @@ void Ball::UpdatePosition(){
     }
 }
 
-void Ball::Collision(Player player){
+void Ball::CollisionPlayer(Player player){
     
     if(position.y >= player.body_head_y && position.y <= player.body_tail_y && position.x == player.body_x){
         collision_player1=true;
-        std::cout << "there was a collision" << std::endl;
+        std::cout << "there was a collision with player" << std::endl;
     }else{
         collision_player1=false;
+    }
+}
+
+void Ball::CollisionComputer(Computer computer){
+    
+    if(position.y >= computer.body_head_y && position.y <= computer.body_tail_y && position.x == computer.body_x){
+        collision_computer=true;
+        std::cout << "there was a collision with computer" << std::endl;
+    }else{
+        collision_computer=false;
     }
 }

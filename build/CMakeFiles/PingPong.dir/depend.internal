@@ -4,6 +4,7 @@
 CMakeFiles/PingPong.dir/src/ball.cpp.o
  /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/ball.cpp
  /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/ball.h
+ /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
  /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL.h
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL_assert.h
@@ -308,6 +309,7 @@ CMakeFiles/PingPong.dir/src/player.cpp.o
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/begin_code.h
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/close_code.h
 CMakeFiles/PingPong.dir/src/renderer.cpp.o
+ /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
  /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
  /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/renderer.cpp
  /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/renderer.h

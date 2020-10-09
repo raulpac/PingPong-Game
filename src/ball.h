@@ -3,6 +3,7 @@
 #include <iostream>
 #include "SDL.h"
 #include "player.h"
+#include "computer.h"
 
 class Ball {
     
@@ -19,9 +20,10 @@ class Ball {
                 
         void PlaceBall();
         void UpdatePosition();
-        void Collision(Player player);
+        void CollisionPlayer(Player player);
+        void CollisionComputer(Computer computer);
         SDL_Point position{0,0};
-
+        Y_Direction get_y_direction();
 
     private:
         void UpdateDirection();

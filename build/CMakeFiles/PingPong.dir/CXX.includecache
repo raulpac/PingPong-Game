@@ -13,9 +13,19 @@ SDL.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
 player.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
+computer.h
+/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
 
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
 vector
+-
+SDL.h
+/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
+
+/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.cpp
+gameLoop.h
+/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.h
+iostream
 -
 SDL.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
@@ -40,16 +50,6 @@ computer.h
 player.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
 
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/main.cpp
-iostream
--
-input.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/input.h
-gameLoop.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.h
-renderer.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/renderer.h
-
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
 vector
 -
@@ -63,6 +63,8 @@ SDL.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
 player.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
+computer.h
+/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
 
 /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL.h
 SDL_main.h

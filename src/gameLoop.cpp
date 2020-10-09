@@ -3,17 +3,18 @@
 #include "SDL.h"
 
 
-Game::Game(std::size_t grid_width, std::size_t grid_height, std::size_t ball_width, std::size_t ball_height, std::size_t comp_width, std::size_t comp_height)
+Game::Game(std::size_t grid_width, 
+            std::size_t grid_height, 
+            std::size_t ball_width, 
+            std::size_t ball_height, 
+            std::size_t comp_width, 
+            std::size_t comp_height)
     : player(grid_width, grid_height), 
       ball(ball_width, ball_height),
       computer(comp_width, comp_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width)),
-      random_h(0, static_cast<int>(grid_height)) {
-  //PlaceBall(ball_width, ball_height);
-  //Ball.PlaceBall(ball_width, ball_height);
-
-}
+      random_h(0, static_cast<int>(grid_height)) {}
 
 void Game::Run(Input const &input, Renderer &renderer,
                std::size_t target_frame_duration) {
@@ -30,7 +31,7 @@ void Game::Run(Input const &input, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     input.HandleInput(running, player);
     Update();
-    renderer.Render(player, ball.position);
+    renderer.Render(player, ball.position, computer);
 
     frame_end = SDL_GetTicks();
 
@@ -55,40 +56,23 @@ void Game::Run(Input const &input, Renderer &renderer,
   }
 }
 
-/*
-void Game::PlaceBall(std::size_t ball_width, std::size_t ball_height) {
-  int x;
-  int y;
-  //Initial Position for ball is the center.
-  ball.x = ball_width/2;
-  ball.y = ball_height/2;
-  
-}
-*/
 
 void Game::Update() {
-  if (!player.alive) return;
+  //if (!player.alive) return;
   //Check for collisions
-  ball.Collision(player);
+  ball.CollisionPlayer(player);
+  ball.CollisionComputer(computer);
   ball.UpdatePosition();
-  //ball.x += 1;
-  //ball.y += 1;
-  
-  player.Update();
-  
-//  int new_x = static_cast<int>(player.head_x);
-//  int new_y = static_cast<int>(player.head_y);
-  
- /*
-  // Check if there's food over here
-  if (food.x == new_x && food.y == new_y) {
-    score++;
-    PlaceFood();
-    // Grow snake and increase speed.
-    snake.GrowBody();
-    snake.speed += 0.02;
+  if (ball.get_y_direction() == Ball::Y_Direction::kDown){
+    computer.direction = Computer::Direction::kDown;
+  }else{
+    computer.direction = Computer::Direction::kUp;
   }
-  */
+ 
+
+  computer.Update();
+  player.Update();
+ 
 }
 
 int Game::GetScore() const { return score; }

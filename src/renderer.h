@@ -4,7 +4,7 @@
 #include <vector>
 #include "SDL.h"
 #include "player.h"
-
+#include "computer.h"
 class Renderer {
  public:
   Renderer(const std::size_t screen_width, const std::size_t screen_height,
@@ -12,7 +12,7 @@ class Renderer {
   ~Renderer();
 
   //void Render(Player const player, SDL_Point const &food);
-  void Render(Player const player, SDL_Point const &ball);
+  void Render(Player const player, SDL_Point const &ball, Computer const computer);
   
   void UpdateWindowTitle(int score, int fps);
 

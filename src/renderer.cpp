@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 
+
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
                    const std::size_t grid_width, const std::size_t grid_height)
@@ -38,7 +39,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::Render(Player const player, SDL_Point const &ball) {
+void Renderer::Render(Player const player, SDL_Point const &ball, Computer const computer) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -55,9 +56,16 @@ void Renderer::Render(Player const player, SDL_Point const &ball) {
   SDL_RenderFillRect(sdl_renderer, &block);
 
 
-  // Render snake's body
+  // Render player's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
   for (SDL_Point const &point : player.bodyBar) {
+    block.x = point.x * block.w;
+    block.y = point.y * block.h;
+    SDL_RenderFillRect(sdl_renderer, &block);
+  }
+  //Render computer's body
+  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  for (SDL_Point const &point : computer.bodyBar) {
     block.x = point.x * block.w;
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);

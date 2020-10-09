@@ -43,15 +43,6 @@ void Player::Update() {
   }
 }
 
-/*
-void Player::UpdateBodyBar(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {
-  // Add previous head location to vector
-  bodyBar.push_back(prev_head_cell);
-  // Remove the tail from the vector.
-  bodyBar.erase(bodyBar.begin());
-}
-*/
-
 void Player::UpdatePosition() {
   //check current direction
   switch (direction) {
@@ -72,24 +63,5 @@ void Player::UpdatePosition() {
       }
   }
 
-  // Wrap the Snake around to the beginning if going off of the screen.
-  //body_x = fmod(body_x + grid_width, grid_width);
-  //body_head_y = fmod(body_head_y + grid_height, grid_height);
 }
 
-
-
-/*
-// Inefficient method to check if cell is occupied by snake.
-bool Player::PlayerCell(int x, int y) {
-  if (x == static_cast<int>(head_x) && y == static_cast<int>(head_y)) {
-    return true;
-  }
-  for (auto const &item : bodyBar) {
-    if (x == item.x && y == item.y) {
-      return true;
-    }
-  }
-  return false;
-}
-*/
