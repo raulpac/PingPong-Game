@@ -143,6 +143,60 @@ PingPong/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PingPong.dir/build.make CMakeFiles/PingPong.dir/build
 .PHONY : PingPong/fast
 
+src/ball.o: src/ball.cpp.o
+
+.PHONY : src/ball.o
+
+# target to build an object file
+src/ball.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PingPong.dir/build.make CMakeFiles/PingPong.dir/src/ball.cpp.o
+.PHONY : src/ball.cpp.o
+
+src/ball.i: src/ball.cpp.i
+
+.PHONY : src/ball.i
+
+# target to preprocess a source file
+src/ball.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PingPong.dir/build.make CMakeFiles/PingPong.dir/src/ball.cpp.i
+.PHONY : src/ball.cpp.i
+
+src/ball.s: src/ball.cpp.s
+
+.PHONY : src/ball.s
+
+# target to generate assembly for a file
+src/ball.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PingPong.dir/build.make CMakeFiles/PingPong.dir/src/ball.cpp.s
+.PHONY : src/ball.cpp.s
+
+src/computer.o: src/computer.cpp.o
+
+.PHONY : src/computer.o
+
+# target to build an object file
+src/computer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PingPong.dir/build.make CMakeFiles/PingPong.dir/src/computer.cpp.o
+.PHONY : src/computer.cpp.o
+
+src/computer.i: src/computer.cpp.i
+
+.PHONY : src/computer.i
+
+# target to preprocess a source file
+src/computer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PingPong.dir/build.make CMakeFiles/PingPong.dir/src/computer.cpp.i
+.PHONY : src/computer.cpp.i
+
+src/computer.s: src/computer.cpp.s
+
+.PHONY : src/computer.s
+
+# target to generate assembly for a file
+src/computer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PingPong.dir/build.make CMakeFiles/PingPong.dir/src/computer.cpp.s
+.PHONY : src/computer.cpp.s
+
 src/gameLoop.o: src/gameLoop.cpp.o
 
 .PHONY : src/gameLoop.o
@@ -287,6 +341,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... PingPong"
+	@echo "... src/ball.o"
+	@echo "... src/ball.i"
+	@echo "... src/ball.s"
+	@echo "... src/computer.o"
+	@echo "... src/computer.i"
+	@echo "... src/computer.s"
 	@echo "... src/gameLoop.o"
 	@echo "... src/gameLoop.i"
 	@echo "... src/gameLoop.s"

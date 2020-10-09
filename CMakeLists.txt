@@ -12,7 +12,7 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS} src)
 
 
-add_executable(PingPong src/main.cpp src/gameLoop.cpp src/input.cpp src/renderer.cpp src/player.cpp)
+add_executable(PingPong src/main.cpp src/gameLoop.cpp src/input.cpp src/renderer.cpp src/player.cpp src/ball.cpp src/computer.cpp)
 string(STRIP ${SDL2_LIBRARIES} SDL2_LIBRARIES)
 target_link_libraries(PingPong ${SDL2_LIBRARIES})
 

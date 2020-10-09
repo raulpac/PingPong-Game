@@ -12,7 +12,7 @@ class Renderer {
   ~Renderer();
 
   //void Render(Player const player, SDL_Point const &food);
-  void Render(Player const player);
+  void Render(Player const player, SDL_Point const &ball);
   
   void UpdateWindowTitle(int score, int fps);
 

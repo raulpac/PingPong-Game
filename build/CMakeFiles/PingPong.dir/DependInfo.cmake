@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/ball.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/ball.cpp.o"
+  "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/computer.cpp.o"
   "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/gameLoop.cpp.o"
   "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/input.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/input.cpp.o"
   "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/main.cpp" "/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir/src/main.cpp.o"

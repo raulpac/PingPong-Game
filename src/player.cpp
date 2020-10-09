@@ -6,7 +6,7 @@
 void Player::CreateBody(){
   //Define begin and end of bar position
   body_head_y = grid_height / 2;
-  body_tail_y = body_head_y + 5;
+  body_tail_y = body_head_y + 10;
   body_x = grid_width / 8;
   //Create the bar points and add them to body vector.
   //As bar only moves up and down. Axis Y is the only who moves.

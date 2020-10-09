@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/PingPong.dir/src/ball.cpp.o"
+  "CMakeFiles/PingPong.dir/src/computer.cpp.o"
   "CMakeFiles/PingPong.dir/src/gameLoop.cpp.o"
   "CMakeFiles/PingPong.dir/src/input.cpp.o"
   "CMakeFiles/PingPong.dir/src/main.cpp.o"
