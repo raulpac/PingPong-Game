@@ -68,8 +68,6 @@ void Game::Update() {
   }else{
     computer.direction = Computer::Direction::kUp;
   }
- 
-
   computer.Update();
   player.Update();
  
