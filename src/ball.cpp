@@ -1,11 +1,7 @@
 #include "ball.h"
 #include "SDL.h"
 
-Ball::Y_Direction Ball::get_y_direction(){
-    return y_direction;
-} 
-
-void Ball::PlaceBall(){
+void Ball::PlaceBall(int grid_width, int grid_heigth){
 
     //Initial Position for ball is the center.
     position.x = grid_width / 2;
@@ -90,4 +86,30 @@ void Ball::CollisionComputer(Computer computer){
     }else{
         collision_computer=false;
     }
+}
+
+//Tells who has score a goal
+
+Ball::Player_Goal Ball::Goal(Player player, Computer computer){
+    if(position.x >= computer.body_x +2){
+        std::cout << "Player's goal" << std::endl;
+        return Ball::Player_Goal::kPlayer;
+    }
+    if(position.x <= player.body_x - 2){
+        std::cout << "Computer's goal" << std::endl;
+        return Ball::Player_Goal::kComputer;
+    }
+    return Ball::Player_Goal::kNoGoal;
+}
+
+Ball::Y_Direction Ball::get_y_direction(){
+    return y_direction;
+} 
+
+int Ball::get_Grid_Height(){
+    return grid_width;
+}
+
+SDL_Point Ball::getPosition(){
+    return position;
 }

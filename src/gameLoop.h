@@ -17,6 +17,8 @@ class Game {
   
   int GetScore() const;
   int GetSize() const;
+  void ReInit();
+  void IncreaseScore();
 
  private:
   Player player;
@@ -29,10 +31,9 @@ class Game {
   std::uniform_int_distribution<int> random_w;
   std::uniform_int_distribution<int> random_h;
 
-  int score{0};
+  int player_score{0};
+  int computer_score{0};
 
-  //void PlaceBall(std::size_t ball_width, std::size_t ball_height);
-  
   void Update();
 };
 

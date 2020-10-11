@@ -14,7 +14,7 @@ class Renderer {
   //void Render(Player const player, SDL_Point const &food);
   void Render(Player const player, SDL_Point const &ball, Computer const computer);
   
-  void UpdateWindowTitle(int score, int fps);
+  void UpdateWindowTitle(int player_score, int comouter_score, int fps);
 
  private:
   SDL_Window *sdl_window;

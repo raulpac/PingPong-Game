@@ -86,7 +86,7 @@ void Renderer::Render(Player const player, SDL_Point const &ball, Computer const
   SDL_RenderPresent(sdl_renderer);
 }
 
-void Renderer::UpdateWindowTitle(int score, int fps) {
-  std::string title{"Player Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
+void Renderer::UpdateWindowTitle(int player_score, int computer_score, int fps) {
+  std::string title{"Player Score: " + std::to_string(player_score) + " Computer Score: " + std::to_string(computer_score)+ " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }

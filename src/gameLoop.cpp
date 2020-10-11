@@ -31,7 +31,7 @@ void Game::Run(Input const &input, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     input.HandleInput(running, player);
     Update();
-    renderer.Render(player, ball.position, computer);
+    renderer.Render(player, ball.getPosition(), computer);
 
     frame_end = SDL_GetTicks();
 
@@ -42,7 +42,7 @@ void Game::Run(Input const &input, Renderer &renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(player_score, computer_score, frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -68,10 +68,46 @@ void Game::Update() {
   }else{
     computer.direction = Computer::Direction::kUp;
   }
+  IncreaseScore();
   computer.Update();
   player.Update();
  
 }
 
-int Game::GetScore() const { return score; }
+int Game::GetScore() const { return player_score; }
 int Game::GetSize() const { return player.size; }
+
+void Game::ReInit(){
+  int y{random_h(engine)};
+  ball.PlaceBall(ball.get_Grid_Height()/2, y);
+}
+
+// I need to create a function for checking goals and from which player. 
+// It also needs to update score and restablished ball position. X on center and a random Y.
+void Game::IncreaseScore(){
+  if(ball.Goal(player, computer) == Ball::Player_Goal::kPlayer){
+    player_score += 1;
+    ReInit();
+  }
+  if(ball.Goal(player, computer) == Ball::Player_Goal::kComputer){
+    computer_score += 1;
+    ReInit();
+  }
+
+}
+/*
+void Game::PlaceFood() {
+  int x, y;
+  while (true) {
+    x = random_w(engine);
+    y = random_h(engine);
+    // Check that the location is not occupied by a snake item before placing
+    // food.
+    if (!snake.SnakeCell(x, y)) {
+      food.x = x;
+      food.y = y;
+      return;
+    }
+  }
+}
+*/
