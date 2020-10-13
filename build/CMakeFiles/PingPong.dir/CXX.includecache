@@ -6,55 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/ball.h
-iostream
--
-SDL.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
-player.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
-computer.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
-
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
 vector
 -
 SDL.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
 
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.cpp
-gameLoop.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.h
-iostream
+/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
+vector
 -
 SDL.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
 
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/gameLoop.h
-random
--
-SDL.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
-input.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/input.h
+/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/renderer.cpp
 renderer.h
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/renderer.h
-player.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
-ball.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/ball.h
-computer.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/computer.h
-
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/input.h
-player.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
-
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/player.h
-vector
+iostream
 -
-SDL.h
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/SDL.h
+string
+-
 
 /Users/raulpac/Desktop/C++ Projects/PingPong-Game/src/renderer.h
 vector

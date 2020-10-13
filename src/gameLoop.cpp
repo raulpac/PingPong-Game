@@ -79,7 +79,17 @@ int Game::GetSize() const { return player.size; }
 
 void Game::ReInit(){
   int y{random_h(engine)};
-  ball.PlaceBall(ball.get_Grid_Height()/2, y);
+  ball.setDirection(y);
+  ball.PlaceBall(ball.get_Grid_Width(), y);
+  
+  while(!player.bodyBar.empty()){
+    player.bodyBar.pop_back();
+  }
+  player.CreateBody();
+  while(!computer.bodyBar.empty()){
+    computer.bodyBar.pop_back();
+  }
+  computer.CreateBody();
 }
 
 // I need to create a function for checking goals and from which player. 

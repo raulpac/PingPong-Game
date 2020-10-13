@@ -26,9 +26,10 @@ class Ball {
         Player_Goal Goal(Player player, Computer computer);
 
         Y_Direction get_y_direction();
-        int get_Grid_Height();
+        int get_Grid_Width();
+        int get_GridHeight();
         SDL_Point getPosition();
-        
+        void setDirection(int y);
 
     private:
         SDL_Point position{0,0};

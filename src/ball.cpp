@@ -91,11 +91,11 @@ void Ball::CollisionComputer(Computer computer){
 //Tells who has score a goal
 
 Ball::Player_Goal Ball::Goal(Player player, Computer computer){
-    if(position.x >= computer.body_x +2){
+    if(position.x >= computer.body_x +4){
         std::cout << "Player's goal" << std::endl;
         return Ball::Player_Goal::kPlayer;
     }
-    if(position.x <= player.body_x - 2){
+    if(position.x <= player.body_x - 4){
         std::cout << "Computer's goal" << std::endl;
         return Ball::Player_Goal::kComputer;
     }
@@ -106,8 +106,32 @@ Ball::Y_Direction Ball::get_y_direction(){
     return y_direction;
 } 
 
-int Ball::get_Grid_Height(){
+void Ball::setDirection(int y){
+    if(y>=0 && y <= grid_height/4){
+        y_direction = Y_Direction::kDown;
+        x_direction = X_Direction::kleft;
+    }
+    if(y > grid_height/4 && y <= grid_height*2/4){
+        y_direction = Y_Direction::kDown;
+        x_direction = X_Direction::krigth;
+    }
+    if(y > grid_height*2/4 && y <= grid_height*3/4){
+        y_direction = Y_Direction::kUp;
+        x_direction = X_Direction::kleft;
+    }
+    if(y > grid_height*3/4 && y <= grid_height){
+        y_direction = Y_Direction::kUp;
+        x_direction = X_Direction::krigth;
+    }
+
+}
+
+int Ball::get_Grid_Width(){
     return grid_width;
+}
+
+int Ball::get_GridHeight(){
+    return grid_height;
 }
 
 SDL_Point Ball::getPosition(){

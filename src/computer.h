@@ -17,7 +17,7 @@ class Computer {
         }
 
         void Update();
-        
+        void CreateBody();
 
         float speed{0.1f};
         int size{1};
@@ -29,7 +29,7 @@ class Computer {
         Direction direction = Direction::kDown;
 
     private:
-        void CreateBody();
+        
         void UpdatePosition();
         int grid_width;
         int grid_height;

@@ -16,6 +16,7 @@ class Player {
         }
 
   void Update();
+  void CreateBody();
   //void ChangeDirection();
 
   float speed{0.1f};
@@ -27,7 +28,7 @@ class Player {
   std::vector<SDL_Point> bodyBar;
   Direction direction = Direction::kUp;
  private:
-  void CreateBody();
+  
   void UpdatePosition();
   
   

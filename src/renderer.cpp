@@ -57,14 +57,14 @@ void Renderer::Render(Player const player, SDL_Point const &ball, Computer const
 
 
   // Render player's body
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
   for (SDL_Point const &point : player.bodyBar) {
     block.x = point.x * block.w;
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
   //Render computer's body
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
   for (SDL_Point const &point : computer.bodyBar) {
     block.x = point.x * block.w;
     block.y = point.y * block.h;
