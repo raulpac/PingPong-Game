@@ -2,7 +2,7 @@
 #include <iostream>
 #include "SDL.h"
 
-
+//Game constructor. Initialized player, computer and ball objects.
 Game::Game(std::size_t grid_width, 
             std::size_t grid_height, 
             std::size_t ball_width, 
@@ -16,6 +16,7 @@ Game::Game(std::size_t grid_width,
       random_w(0, static_cast<int>(grid_width)),
       random_h(0, static_cast<int>(grid_height)) {}
 
+//Run contains the main loop and refreshes the window. It also call update function.
 void Game::Run(Input const &input, Renderer &renderer,
                std::size_t target_frame_duration) {
   Uint32 title_timestamp = SDL_GetTicks();
@@ -56,32 +57,38 @@ void Game::Run(Input const &input, Renderer &renderer,
   }
 }
 
-
+//Update function checks for collisions, update object positions and directions. It also increment the scoreboard.
 void Game::Update() {
-  //if (!player.alive) return;
-  //Check for collisions
+
   ball.CollisionPlayer(player);
   ball.CollisionComputer(computer);
+  // Either there was a collision or not ball needs to be refreshed.
   ball.UpdatePosition();
+  //computer direction will try to always follow ball direction
   if (ball.get_y_direction() == Ball::Y_Direction::kDown){
     computer.direction = Computer::Direction::kDown;
   }else{
     computer.direction = Computer::Direction::kUp;
   }
+  //Verifies if a player has make a point and increments scoreboard.
   IncreaseScore();
+  //Refresh computer's position
   computer.Update();
+  //Refresh player's position
   player.Update();
- 
 }
 
-int Game::GetScore() const { return player_score; }
-int Game::GetSize() const { return player.size; }
-
+//Once a player has made a point computer, player and ball need to be repositioned to original place on window.
+//Ball's direction will be calculated randomly with ball's setDirection function.
 void Game::ReInit(){
+  //generate a random value with y axis value range.
   int y{random_h(engine)};
+  //calculate new ball's direction
   ball.setDirection(y);
+  //Place ball on the center of x axis and a random place in y axis.
   ball.PlaceBall(ball.get_Grid_Width(), y);
   
+  //Erase player's and computer's body to redraw them again on default position.
   while(!player.bodyBar.empty()){
     player.bodyBar.pop_back();
   }
@@ -92,8 +99,7 @@ void Game::ReInit(){
   computer.CreateBody();
 }
 
-// I need to create a function for checking goals and from which player. 
-// It also needs to update score and restablished ball position. X on center and a random Y.
+//Check which player has scored a point and calls ReInit() function to redraw positions on default positions.
 void Game::IncreaseScore(){
   if(ball.Goal(player, computer) == Ball::Player_Goal::kPlayer){
     player_score += 1;
@@ -103,21 +109,17 @@ void Game::IncreaseScore(){
     computer_score += 1;
     ReInit();
   }
-
 }
-/*
-void Game::PlaceFood() {
-  int x, y;
-  while (true) {
-    x = random_w(engine);
-    y = random_h(engine);
-    // Check that the location is not occupied by a snake item before placing
-    // food.
-    if (!snake.SnakeCell(x, y)) {
-      food.x = x;
-      food.y = y;
-      return;
-    }
+
+//When user finishes the game the Winner needs to be declared.
+void Game::Winner(){
+  if (player_score > computer_score){
+    std::cout << "And the wineer is the Player" << std::endl;
+  }
+  if (computer_score > player_score){
+    std::cout << "And the winner is the Computer"  << std::endl;
+  }
+  if( computer_score == player_score){
+    std::cout << "No Winner. Try again" << std::endl; 
   }
 }
-*/
