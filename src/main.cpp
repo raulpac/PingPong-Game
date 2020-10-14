@@ -18,9 +18,9 @@ int main() {
   constexpr std::size_t kCompWidth{64};
   constexpr std::size_t kCompHeight{64};
 
-  // Create renderer object which will handle window settings.
-  Renderer *renderer = new Renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  
+  // Create renderer pointer object which will handle window settings.
+  //Renderer *renderer = new Renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+  std::unique_ptr<Renderer> renderer = std::make_unique<Renderer>(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   // Input object basically is the controller interface for player and keyboard.
   std::unique_ptr<Input> input = std::make_unique<Input>();
   // Game object owns a player, computer and ball objects to run the game logic.
