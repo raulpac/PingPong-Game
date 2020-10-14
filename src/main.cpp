@@ -2,6 +2,7 @@
 #include "input.h"
 #include "gameLoop.h"
 #include "renderer.h"
+#include <memory>
 
 int main() {
 
@@ -18,12 +19,13 @@ int main() {
   constexpr std::size_t kCompHeight{64};
 
   // Create renderer object which will handle window settings.
-  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+  Renderer *renderer = new Renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+  
   // Input object basically is the controller interface for player and keyboard.
-  Input input;
+  std::unique_ptr<Input> input = std::make_unique<Input>();
   // Game object owns a player, computer and ball objects to run the game logic.
   Game game(kGridWidth, kGridHeight, kBallWidth, kBallHeight, kCompWidth, kCompHeight);
-  game.Run(input, renderer, kMsPerFrame);
+  game.Run(std::move(input), *renderer, kMsPerFrame);
   std::cout << "Game has terminated successfully!\n";
   game.Winner();
   return 0;
