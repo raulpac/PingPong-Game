@@ -5,16 +5,18 @@
 #include "SDL.h"
 #include "player.h"
 #include "computer.h"
+
 class Renderer {
  public:
+  //Renderer Constructor
   Renderer(const std::size_t screen_width, const std::size_t screen_height,
            const std::size_t grid_width, const std::size_t grid_height);
   ~Renderer();
 
-  //void Render(Player const player, SDL_Point const &food);
+ //Draws all objects in window
   void Render(Player const player, SDL_Point const &ball, Computer const computer);
-  
-  void UpdateWindowTitle(int player_score, int comouter_score, int fps);
+  //Draws players' scores in title.
+  void UpdateWindowTitle(int player_score, int computer_score, int fps);
 
  private:
   SDL_Window *sdl_window;

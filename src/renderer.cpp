@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-
+//Class constructor also checks if SDL was initialized correctly.
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
                    const std::size_t grid_width, const std::size_t grid_height)
@@ -20,7 +20,7 @@ Renderer::Renderer(const std::size_t screen_width,
   sdl_window = SDL_CreateWindow("PingPong Game", SDL_WINDOWPOS_CENTERED,
                                 SDL_WINDOWPOS_CENTERED, screen_width,
                                 screen_height, SDL_WINDOW_SHOWN);
-
+  // check if there was a problem with window creation.
   if (nullptr == sdl_window) {
     std::cerr << "Window could not be created.\n";
     std::cerr << " SDL_Error: " << SDL_GetError() << "\n";
@@ -39,6 +39,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
+//Draws objects on window.
 void Renderer::Render(Player const player, SDL_Point const &ball, Computer const computer) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
@@ -71,21 +72,11 @@ void Renderer::Render(Player const player, SDL_Point const &ball, Computer const
     SDL_RenderFillRect(sdl_renderer, &block);
   }
 
-  /* Render snake's head
-  block.x = static_cast<int>(player.head_x) * block.w;
-  block.y = static_cast<int>(player.head_y) * block.h;
-  if (player.alive) {
-    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
-  } else {
-    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
-  }
-  SDL_RenderFillRect(sdl_renderer, &block);
-  */
- 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
 
+//Update the score for each player on window title
 void Renderer::UpdateWindowTitle(int player_score, int computer_score, int fps) {
   std::string title{"Player Score: " + std::to_string(player_score) + " Computer Score: " + std::to_string(computer_score)+ " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
