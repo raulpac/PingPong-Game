@@ -1,6 +1,7 @@
 #include "player.h"
 #include <cmath>
 #include <iostream>
+#include <algorithm>
 
 
 void Player::CreateBody(){

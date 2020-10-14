@@ -1,4 +1,5 @@
 #include "computer.h"
+#include <algorithm>
 
 //Creates and fills computer's body
 void Computer::CreateBody(){
