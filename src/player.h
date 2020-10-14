@@ -6,22 +6,21 @@
 
 class Player {
  public:
+  //Player's body direction values
   enum class Direction { kUp, kDown };
-
+  //Player constructor
   Player(int grid_width, int grid_height)
       : grid_width(grid_width),
         grid_height(grid_height)
         {
           CreateBody(); 
         }
-
+  //calculates new player's position
   void Update();
+  //Creates player's body
   void CreateBody();
-  //void ChangeDirection();
 
   float speed{0.1f};
-  int size{1};
-  bool alive{true};
   float body_head_y;
   float body_tail_y;
   float body_x;
@@ -30,8 +29,6 @@ class Player {
  private:
   
   void UpdatePosition();
-  
-  
   int grid_width;
   int grid_height;
 };

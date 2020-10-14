@@ -2,7 +2,6 @@
 #include "SDL.h"
 
 void Ball::PlaceBall(int grid_width, int grid_heigth){
-
     //Initial Position for ball is the center.
     position.x = grid_width / 2;
     position.y = grid_height / 2;
@@ -13,25 +12,20 @@ void Ball::UpdatePosition(){
     speed += 0.1;
     
     if(speed >= 1.0){
-        //Verified Direction first and then if ball's position is still inside screen size and for collisions.
-
-        //acabas de agregar direcion izquierda, derecha, up and down. Checa como hacer los ifs para el cambio de direccion.
-        if(y_direction == Y_Direction::kDown){
-            
+    //Verify Direction, collisions and if ball is still inside window's size. 
+    //Then, updates x and y directions and collision values.
+        if(y_direction == Y_Direction::kDown){ 
             if(collision_player1 == true){ 
-                //y_direction == Y_Direction::kUp; 
                 x_direction = X_Direction::krigth;
             }
             if(collision_computer == true){ 
-                //y_direction == Y_Direction::kUp; 
                 x_direction = X_Direction::kleft;
             }
-            
+            //If ball is on botton of the window change direction to up.
             if(position.y >= 64){
                 y_direction = Y_Direction::kUp;
             }else{
                 if(x_direction == X_Direction::krigth){
-                    std::cout << "we go down move rigth" << std::endl;
                     position.x += 1;
                     position.y += 2;
                 }else{
@@ -49,7 +43,7 @@ void Ball::UpdatePosition(){
             if(collision_computer == true){ 
                 x_direction = X_Direction::kleft;
             }
-
+            //If ball is on top of the window change direction to down.
             if(position.y <= 0){
                 y_direction = Y_Direction::kDown;
             }else{

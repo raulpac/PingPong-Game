@@ -14,9 +14,10 @@ void Player::CreateBody(){
   for (int i=0; i<=body_tail_y-body_head_y; i++){
     SDL_Point extra_cell{ static_cast<int>(body_x), static_cast<int>( body_head_y+i)};
     bodyBar.push_back(extra_cell);
-
   } 
 }
+
+//Updates new player's position
 
 void Player::Update() {
   // We first capture the head's cell before updating.
@@ -28,18 +29,17 @@ void Player::Update() {
   SDL_Point new_pos_head{ static_cast<int>(body_x), static_cast<int>(body_head_y)}; 
   SDL_Point new_pos_tail{ static_cast<int>(body_x), static_cast<int>(body_tail_y)}; 
   
-  // Update all of the body vector items if the snake has moved
+  // Update all of the body vector items if the snake has moved and direction is up.
   if( (direction == Player::Direction::kUp) && (current_pos_head.y != new_pos_head.y) ){
     std::reverse(bodyBar.begin(), bodyBar.end());
     bodyBar.push_back(new_pos_head);
     bodyBar.erase(bodyBar.begin());
     std::reverse(bodyBar.begin(), bodyBar.end());
   }
+  // Update all of the body vector items if the snake has moved and direction is down.
   if( (direction == Player::Direction::kDown) && (current_pos_tail.y != new_pos_tail.y) ){
-    
     bodyBar.push_back(new_pos_tail);
     bodyBar.erase(bodyBar.begin());
-    
   }
 }
 
@@ -53,7 +53,6 @@ void Player::UpdatePosition() {
         body_tail_y -= speed;
         break;
       }
-      
     //update down position
     case Direction::kDown:
       if (body_tail_y<=grid_height){
