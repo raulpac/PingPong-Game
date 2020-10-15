@@ -39,6 +39,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
+
 //Draws objects on window.
 void Renderer::Render(Player const player, SDL_Point const &ball, Computer const computer) {
   SDL_Rect block;
@@ -77,7 +78,7 @@ void Renderer::Render(Player const player, SDL_Point const &ball, Computer const
 }
 
 //Update the score for each player on window title
-void Renderer::UpdateWindowTitle(int player_score, int computer_score, int fps) {
-  std::string title{"Player Score: " + std::to_string(player_score) + " Computer Score: " + std::to_string(computer_score)+ " FPS: " + std::to_string(fps)};
+void Renderer::UpdateWindowTitle(const int player_score, const int computer_score, const int fps) {
+  std::string title{"Player Score: " + std::to_string(player_score) + "    Computer Score: " + std::to_string(computer_score)+ "    FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }

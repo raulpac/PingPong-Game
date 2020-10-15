@@ -16,7 +16,7 @@ class Renderer {
  //Draws all objects in window
   void Render(Player const player, SDL_Point const &ball, Computer const computer);
   //Draws players' scores in title.
-  void UpdateWindowTitle(int player_score, int computer_score, int fps);
+  void UpdateWindowTitle(const int player_score, const int computer_score, const int fps);
 
  private:
   SDL_Window *sdl_window;

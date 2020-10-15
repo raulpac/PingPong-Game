@@ -21,7 +21,7 @@ Game::Game(std::size_t grid_width,
       }
 
 //Run contains the main loop and refreshes the window. It also call update function.
-void Game::Run(std::unique_ptr<Input> const &input, Renderer &renderer, std::size_t target_frame_duration) 
+void Game::Run(std::unique_ptr<Input> const &input, std::unique_ptr<Renderer> const &renderer, std::size_t target_frame_duration) 
 {
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
@@ -36,7 +36,7 @@ void Game::Run(std::unique_ptr<Input> const &input, Renderer &renderer, std::siz
     // Input, Update, Render - the main game loop.
     input->HandleInput(running, *player);
     Update();
-    renderer.Render(*player, ball->getPosition(), *computer);
+    renderer->Render(*player, ball->getPosition(), *computer);
 
     frame_end = SDL_GetTicks();
 
@@ -47,7 +47,7 @@ void Game::Run(std::unique_ptr<Input> const &input, Renderer &renderer, std::siz
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(player_score, computer_score, frame_count);
+      renderer->UpdateWindowTitle(player_score, computer_score, frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }

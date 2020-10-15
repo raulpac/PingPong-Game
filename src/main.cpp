@@ -21,12 +21,13 @@ int main() {
   // Create renderer pointer object which will handle window settings.
   //Renderer *renderer = new Renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   std::unique_ptr<Renderer> renderer = std::make_unique<Renderer>(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+  
   // Input object basically is the controller interface for player and keyboard.
   std::unique_ptr<Input> input = std::make_unique<Input>();
   // Game object owns a player, computer and ball objects to run the game logic.
-  Game game(kGridWidth, kGridHeight, kBallWidth, kBallHeight, kCompWidth, kCompHeight);
-  game.Run(std::move(input), *renderer, kMsPerFrame);
+  std::unique_ptr<Game> game = std::make_unique<Game>(kGridWidth, kGridHeight, kBallWidth, kBallHeight, kCompWidth, kCompHeight);
+  game->Run(std::move(input), std::move(renderer), kMsPerFrame);
   std::cout << "Game has terminated successfully!\n";
-  game.Winner();
+  game->Winner();
   return 0;
 }

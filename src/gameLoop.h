@@ -16,7 +16,7 @@ class Game {
       std::size_t ball_width, std::size_t ball_height, 
       std::size_t comp_width, std::size_t comp_height);
 
-  void Run(std::unique_ptr<Input> const &input, Renderer &renderer, std::size_t target_frame_duration);
+  void Run(std::unique_ptr<Input> const &input,std::unique_ptr<Renderer> const &renderer, std::size_t target_frame_duration);
   void ReInit();
   void IncreaseScore();
   void Winner();

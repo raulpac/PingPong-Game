@@ -48,7 +48,7 @@ void Ball::UpdatePosition(){
                 y_direction = Y_Direction::kDown;
             }else{
                 if(x_direction == X_Direction::krigth){
-                    std::cout << "we go up and right" << std::endl;
+                    //std::cout << "we go up and right" << std::endl;
                     position.x += 1;
                     position.y -= 2;
                 }else{
@@ -66,7 +66,7 @@ void Ball::CollisionPlayer(Player player){
     
     if(position.y >= player.body_head_y && position.y <= player.body_tail_y && position.x == player.body_x){
         collision_player1=true;
-        std::cout << "there was a collision with player" << std::endl;
+        //std::cout << "there was a collision with player" << std::endl;
     }else{
         collision_player1=false;
     }
@@ -76,7 +76,7 @@ void Ball::CollisionComputer(Computer computer){
     
     if(position.y >= computer.body_head_y && position.y <= computer.body_tail_y && position.x == computer.body_x){
         collision_computer=true;
-        std::cout << "there was a collision with computer" << std::endl;
+        //std::cout << "there was a collision with computer" << std::endl;
     }else{
         collision_computer=false;
     }
@@ -85,12 +85,12 @@ void Ball::CollisionComputer(Computer computer){
 //Tells who has score a goal
 
 Ball::Player_Goal Ball::Goal(Player player, Computer computer){
-    if(position.x >= computer.body_x +4){
-        std::cout << "Player's goal" << std::endl;
+    if(position.x >= computer.body_x +6){
+        //std::cout << "Player's goal" << std::endl;
         return Ball::Player_Goal::kPlayer;
     }
-    if(position.x <= player.body_x - 4){
-        std::cout << "Computer's goal" << std::endl;
+    if(position.x <= player.body_x - 6){
+        //std::cout << "Computer's goal" << std::endl;
         return Ball::Player_Goal::kComputer;
     }
     return Ball::Player_Goal::kNoGoal;
