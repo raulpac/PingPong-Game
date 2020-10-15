@@ -1,3 +1,0 @@
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/rebuild_cache.dir
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/edit_cache.dir
-/Users/raulpac/Desktop/C++ Projects/PingPong-Game/build/CMakeFiles/PingPong.dir
