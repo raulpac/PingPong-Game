@@ -41,7 +41,7 @@ Renderer::~Renderer() {
 
 
 //Draws objects on window.
-void Renderer::Render(Player const player, SDL_Point const &ball, Computer const computer) {
+void Renderer::Render(Player const &player, SDL_Point const &ball, Computer const &computer) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;

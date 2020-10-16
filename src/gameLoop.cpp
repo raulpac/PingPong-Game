@@ -9,12 +9,11 @@ Game::Game(std::size_t grid_width,
             std::size_t ball_height, 
             std::size_t comp_width, 
             std::size_t comp_height)
-    : //player(grid_width, grid_height), 
-      //ball(ball_width, ball_height),
-      //computer(comp_width, comp_height),
+    : //player(), ball(), computer(),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width)),
       random_h(0, static_cast<int>(grid_height)) {
+
         player = std::make_unique<Player>(grid_width, grid_height);
         ball = std::make_unique<Ball>(ball_width, ball_height);
         computer = std::make_unique<Computer>(comp_width, comp_height);

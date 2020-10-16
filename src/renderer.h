@@ -14,7 +14,7 @@ class Renderer {
   ~Renderer();
 
  //Draws all objects in window
-  void Render(Player const player, SDL_Point const &ball, Computer const computer);
+  void Render(Player const &player, SDL_Point const &ball, Computer const &computer);
   //Draws players' scores in title.
   void UpdateWindowTitle(const int player_score, const int computer_score, const int fps);
 
